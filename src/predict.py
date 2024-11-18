@@ -7,16 +7,16 @@ def predict_spam(model, vectorizer,input_path,output_path):
         with open(input_path, 'r', encoding='utf-8') as input_path:
             lines = input_path.readlines()
 
-        spam = set()
-        ham = set()
+        spam = []
+        ham = []
 
         with open(output_path, 'w', encoding='utf-8') as output_path:
             for line in lines:
                 predict = predict_spam_line(model, vectorizer,line)
                 if predict == 1:
-                    spam.add(line)
+                    spam.append(line)
                 else:
-                    ham.add(line)
+                    ham.append(line)
             output_path.write("Ham:\n")
             for line in ham:
                 output_path.write(line)

@@ -19,4 +19,4 @@ else:
     model = load_model(path_to_model)
     vectorizer = load_model(path_to_vectorizer)
 
-print(predict_spam(model, vectorizer, input_path, output_path))
+predict_spam(model, vectorizer, input_path, output_path)
